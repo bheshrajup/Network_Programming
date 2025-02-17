@@ -20,6 +20,22 @@ public class AbsoluteRelative{
             //Convert URI to URL
             URL resolvedUrl = resolvedUri.toURL();
             System.out.println("Resolved URL as URL object:"+resolvedUrl);
+
+            //Extract components of the resolved URL
+            System.out.println("Protocol:"+resolvedUrl.getProtocol());
+            System.out.println("Host:"+resolvedUrl.getHost());
+            System.out.println("Path:"+resolvedUrl.getPath());
+            System.out.println("Query:"+resolvedUrl.getQuery());
+            System.out.println("Port:"+resolvedUrl.getPort());
+
+            //Create a relative URl from the resolved URL
+            URI relativizedUri = baseUri.relativize(resolvedUri);
+            System.out.println("Relative URL:"+relativizedUri);
+
+        }catch(URISyntaxException e){
+            System.err.println("Invalid URI syntax:"+e.getMessage());
+        }catch(Exception e){
+            System.err.println("Error:"+e.getMessage());
         }
     }
 }

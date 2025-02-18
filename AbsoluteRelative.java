@@ -30,7 +30,7 @@ public class AbsoluteRelative{
 
             //Create a relative URl from the resolved URL
             URI relativizedUri = baseUri.relativize(resolvedUri);
-            System.out.println("Relative URL:"+relativizedUri);
+            System.out.println("Relativized URL:"+relativizedUri);
 
         }catch(URISyntaxException e){
             System.err.println("Invalid URI syntax:"+e.getMessage());
